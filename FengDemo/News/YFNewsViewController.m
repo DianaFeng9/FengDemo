@@ -7,6 +7,8 @@
 //
 
 #import "YFNewsViewController.h"
+#import "YFNewsCell.h"
+#import "YFDetailController.h"
 
 @interface YFNewsViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -40,9 +42,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *c = [[UIViewController alloc] init];
-    c.title = @"kk";
-    [self.navigationController pushViewController:c animated:YES];
+    YFDetailController *detailController = [[YFDetailController alloc] init];
+    detailController.navigationItem.title = @"详情页";
+    [self.navigationController pushViewController:detailController animated:YES];
 }
 
 #pragma mark UITableViewDataSource
@@ -51,11 +53,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"标题- %@", @(indexPath.row)];
+    YFNewsCell *cell = [YFNewsCell newsCellWithTableView:tableView];
+    
+//    YFNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"id"];
+//    }
+    
+    
+//    cell.textLabel.text = [NSString stringWithFormat:@"标题- %@", @(indexPath.row)];
     return cell;
 }
 

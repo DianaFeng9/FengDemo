@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44239094C2CD76CC4BEE1A4F /* libPods-FengDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FE34B8BBA4403218814DB2 /* libPods-FengDemo.a */; };
+		C80784FF24472D3700E0CB3E /* YFDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80784FE24472D3700E0CB3E /* YFDetailController.m */; };
+		C807850324472F0A00E0CB3E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C807850224472F0A00E0CB3E /* BaseViewController.m */; };
 		C81E1185243F18D300694B42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C81E1184243F18D300694B42 /* AppDelegate.m */; };
 		C81E1188243F18D300694B42 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C81E1187243F18D300694B42 /* SceneDelegate.m */; };
 		C81E118B243F18D300694B42 /* YFNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C81E118A243F18D300694B42 /* YFNewsViewController.m */; };
@@ -16,9 +19,17 @@
 		C81E119E2443405300694B42 /* YFVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C81E119D2443405300694B42 /* YFVideoViewController.m */; };
 		C81E11A12443584E00694B42 /* YFRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C81E11A02443584E00694B42 /* YFRecommendViewController.m */; };
 		C81E11A4244358FF00694B42 /* YFMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C81E11A3244358FF00694B42 /* YFMeViewController.m */; };
+		C81E11A824449D7700694B42 /* YFNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C81E11A724449D7700694B42 /* YFNewsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930500001AA639B717FE93FC /* Pods-FengDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengDemo.debug.xcconfig"; path = "Target Support Files/Pods-FengDemo/Pods-FengDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		93558B83E3C2E4A5E10B0ACA /* Pods-FengDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FengDemo.release.xcconfig"; path = "Target Support Files/Pods-FengDemo/Pods-FengDemo.release.xcconfig"; sourceTree = "<group>"; };
+		A6FE34B8BBA4403218814DB2 /* libPods-FengDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FengDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80784FD24472D3600E0CB3E /* YFDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFDetailController.h; sourceTree = "<group>"; };
+		C80784FE24472D3700E0CB3E /* YFDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFDetailController.m; sourceTree = "<group>"; };
+		C807850124472F0A00E0CB3E /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		C807850224472F0A00E0CB3E /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		C81E1180243F18D300694B42 /* FengDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FengDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C81E1183243F18D300694B42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C81E1184243F18D300694B42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,6 +47,8 @@
 		C81E11A02443584E00694B42 /* YFRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFRecommendViewController.m; sourceTree = "<group>"; };
 		C81E11A2244358FF00694B42 /* YFMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFMeViewController.h; sourceTree = "<group>"; };
 		C81E11A3244358FF00694B42 /* YFMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFMeViewController.m; sourceTree = "<group>"; };
+		C81E11A624449D7700694B42 /* YFNewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFNewsCell.h; sourceTree = "<group>"; };
+		C81E11A724449D7700694B42 /* YFNewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFNewsCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +56,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44239094C2CD76CC4BEE1A4F /* libPods-FengDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DC8F971A715339D9A4C0C65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				930500001AA639B717FE93FC /* Pods-FengDemo.debug.xcconfig */,
+				93558B83E3C2E4A5E10B0ACA /* Pods-FengDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C807850024472D4500E0CB3E /* BaseComponent */ = {
+			isa = PBXGroup;
+			children = (
+				C807850124472F0A00E0CB3E /* BaseViewController.h */,
+				C807850224472F0A00E0CB3E /* BaseViewController.m */,
+			);
+			path = BaseComponent;
+			sourceTree = "<group>";
+		};
 		C81E1177243F18D300694B42 = {
 			isa = PBXGroup;
 			children = (
 				C81E1182243F18D300694B42 /* FengDemo */,
 				C81E1181243F18D300694B42 /* Products */,
+				4DC8F971A715339D9A4C0C65 /* Pods */,
+				F7A7B7EE68C09D1FFE5E5724 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,12 +102,12 @@
 		C81E1182243F18D300694B42 /* FengDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C807850024472D4500E0CB3E /* BaseComponent */,
+				C81E11A524449CEA00694B42 /* News */,
 				C81E1183243F18D300694B42 /* AppDelegate.h */,
 				C81E1184243F18D300694B42 /* AppDelegate.m */,
 				C81E1186243F18D300694B42 /* SceneDelegate.h */,
 				C81E1187243F18D300694B42 /* SceneDelegate.m */,
-				C81E1189243F18D300694B42 /* YFNewsViewController.h */,
-				C81E118A243F18D300694B42 /* YFNewsViewController.m */,
 				C81E119C2443405300694B42 /* YFVideoViewController.h */,
 				C81E119D2443405300694B42 /* YFVideoViewController.m */,
 				C81E119F2443584E00694B42 /* YFRecommendViewController.h */,
@@ -88,6 +122,27 @@
 			path = FengDemo;
 			sourceTree = "<group>";
 		};
+		C81E11A524449CEA00694B42 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				C81E1189243F18D300694B42 /* YFNewsViewController.h */,
+				C81E118A243F18D300694B42 /* YFNewsViewController.m */,
+				C81E11A624449D7700694B42 /* YFNewsCell.h */,
+				C81E11A724449D7700694B42 /* YFNewsCell.m */,
+				C80784FD24472D3600E0CB3E /* YFDetailController.h */,
+				C80784FE24472D3700E0CB3E /* YFDetailController.m */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		F7A7B7EE68C09D1FFE5E5724 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6FE34B8BBA4403218814DB2 /* libPods-FengDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,6 +150,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C81E1199243F18D700694B42 /* Build configuration list for PBXNativeTarget "FengDemo" */;
 			buildPhases = (
+				06FB887EEC1083EC5F083705 /* [CP] Check Pods Manifest.lock */,
 				C81E117C243F18D300694B42 /* Sources */,
 				C81E117D243F18D300694B42 /* Frameworks */,
 				C81E117E243F18D300694B42 /* Resources */,
@@ -152,14 +208,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06FB887EEC1083EC5F083705 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FengDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C81E117C243F18D300694B42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C80784FF24472D3700E0CB3E /* YFDetailController.m in Sources */,
+				C807850324472F0A00E0CB3E /* BaseViewController.m in Sources */,
 				C81E118B243F18D300694B42 /* YFNewsViewController.m in Sources */,
 				C81E1185243F18D300694B42 /* AppDelegate.m in Sources */,
 				C81E1196243F18D700694B42 /* main.m in Sources */,
+				C81E11A824449D7700694B42 /* YFNewsCell.m in Sources */,
 				C81E11A4244358FF00694B42 /* YFMeViewController.m in Sources */,
 				C81E1188243F18D300694B42 /* SceneDelegate.m in Sources */,
 				C81E11A12443584E00694B42 /* YFRecommendViewController.m in Sources */,
@@ -293,6 +377,7 @@
 		};
 		C81E119A243F18D700694B42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 930500001AA639B717FE93FC /* Pods-FengDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,6 +394,7 @@
 		};
 		C81E119B243F18D700694B42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93558B83E3C2E4A5E10B0ACA /* Pods-FengDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
