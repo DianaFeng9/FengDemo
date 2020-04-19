@@ -34,12 +34,13 @@
     [self.backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
-//    [self.deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.top.equalTo(self);
-//        make.size.mas_equalTo(CGSizeMake(10, 5));
-//    }];
+    [self.deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.equalTo(self);
+        make.size.mas_equalTo(CGSizeMake(10, 5));
+    }];
     
-    self.deleteButton.frame = CGRectMake(0, 0, 0, 0);
+//    self.deleteButton.frame = CGRectMake(0, 0, 0, 0);
+    [self layoutIfNeeded];
 }
 
 - (UIView *)backgroundView {
@@ -77,17 +78,20 @@
 - (void)showsDeleteViewFromePoint:(CGPoint)point clickBlock:(dispatch_block_t)clickBlock{
     [[UIApplication sharedApplication].windows[0] addSubview:self];
     
-    self.deleteButton.frame = CGRectMake(point.x, point.y, 0, 0);
+//    self.deleteButton.frame = CGRectMake(point.x, point.y, 0, 0);
+//    [self layoutIfNeeded];
+    
+//    [self layoutIfNeeded];
     _clickBlock = [clickBlock copy];
     
     [UIView animateWithDuration:1.0f animations:^{
-        self.deleteButton.frame = CGRectMake((self.bounds.size.width - 150) / 2, (self.bounds.size.height - 50) / 2, 150, 50);
+//        self.deleteButton.frame = CGRectMake((self.bounds.size.width - 150) / 2, (self.bounds.size.height - 50) / 2, 150, 50);
 
-//        [self.deleteButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.center.equalTo(self);
-//            make.size.mas_equalTo(CGSizeMake(150.0, 50.0));
-//        }];
-//        [self layoutIfNeeded];
+        [self.deleteButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self);
+            make.size.mas_equalTo(CGSizeMake(150.0, 50.0));
+        }];
+        [self layoutIfNeeded];
     }];
 }
 
