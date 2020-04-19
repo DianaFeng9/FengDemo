@@ -10,6 +10,7 @@
 		44239094C2CD76CC4BEE1A4F /* libPods-FengDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FE34B8BBA4403218814DB2 /* libPods-FengDemo.a */; };
 		C80784FF24472D3700E0CB3E /* YFDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80784FE24472D3700E0CB3E /* YFDetailController.m */; };
 		C807850324472F0A00E0CB3E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C807850224472F0A00E0CB3E /* BaseViewController.m */; };
+		C8078507244AF81800E0CB3E /* YFDeleteView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8078506244AF81800E0CB3E /* YFDeleteView.m */; };
 		C81E1185243F18D300694B42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C81E1184243F18D300694B42 /* AppDelegate.m */; };
 		C81E1188243F18D300694B42 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C81E1187243F18D300694B42 /* SceneDelegate.m */; };
 		C81E118B243F18D300694B42 /* YFNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C81E118A243F18D300694B42 /* YFNewsViewController.m */; };
@@ -30,6 +31,8 @@
 		C80784FE24472D3700E0CB3E /* YFDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFDetailController.m; sourceTree = "<group>"; };
 		C807850124472F0A00E0CB3E /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		C807850224472F0A00E0CB3E /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		C8078505244AF81800E0CB3E /* YFDeleteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFDeleteView.h; sourceTree = "<group>"; };
+		C8078506244AF81800E0CB3E /* YFDeleteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFDeleteView.m; sourceTree = "<group>"; };
 		C81E1180243F18D300694B42 /* FengDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FengDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C81E1183243F18D300694B42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C81E1184243F18D300694B42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -81,6 +84,15 @@
 			path = BaseComponent;
 			sourceTree = "<group>";
 		};
+		C8078504244AF77F00E0CB3E /* CommonUtil */ = {
+			isa = PBXGroup;
+			children = (
+				C8078505244AF81800E0CB3E /* YFDeleteView.h */,
+				C8078506244AF81800E0CB3E /* YFDeleteView.m */,
+			);
+			path = CommonUtil;
+			sourceTree = "<group>";
+		};
 		C81E1177243F18D300694B42 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +114,7 @@
 		C81E1182243F18D300694B42 /* FengDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C8078504244AF77F00E0CB3E /* CommonUtil */,
 				C807850024472D4500E0CB3E /* BaseComponent */,
 				C81E11A524449CEA00694B42 /* News */,
 				C81E1183243F18D300694B42 /* AppDelegate.h */,
@@ -242,6 +255,7 @@
 				C807850324472F0A00E0CB3E /* BaseViewController.m in Sources */,
 				C81E118B243F18D300694B42 /* YFNewsViewController.m in Sources */,
 				C81E1185243F18D300694B42 /* AppDelegate.m in Sources */,
+				C8078507244AF81800E0CB3E /* YFDeleteView.m in Sources */,
 				C81E1196243F18D700694B42 /* main.m in Sources */,
 				C81E11A824449D7700694B42 /* YFNewsCell.m in Sources */,
 				C81E11A4244358FF00694B42 /* YFMeViewController.m in Sources */,

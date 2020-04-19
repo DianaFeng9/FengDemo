@@ -80,7 +80,7 @@
     }];
     
     [self.deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(10.0, 10.0));
+        make.size.mas_equalTo(CGSizeMake(30.0, 30.0));
         make.right.mas_equalTo(self.imgView.mas_left).offset(-5.0);
         make.bottom.mas_equalTo(self.contentView);
     }];
@@ -149,16 +149,16 @@
     self.commentLabel.text = @"888评论";
     self.timeLabel.text = @"3分钟前";
     self.deleteButton.backgroundColor = [UIColor redColor];
-    [self.deleteButton setTitle:@"del" forState:UIControlStateNormal];
-    [self.deleteButton setTitle:@"del" forState:UIControlStateHighlighted];
+    [self.deleteButton setTitle:@"X" forState:UIControlStateNormal];
+    [self.deleteButton setTitle:@"X" forState:UIControlStateHighlighted];
     self.imgView.backgroundColor = [UIColor yellowColor];
 }
 
 // #define YF_IS_DELEGATE_RSP_SEL(iDel, iSel) (iDel != nil && [iDel respondsToSelector:@selector(iSel)])
 
 - (void)didClickDeleteButton{
-    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(didClickDeleteButton)]) {
-        [self.delegate didClickDeleteButton:self.deleteButton];
+    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(newsCell:didClickDeleteButton:)]) {
+        [self.delegate newsCell:self didClickDeleteButton:self.deleteButton];
     }
 }
 

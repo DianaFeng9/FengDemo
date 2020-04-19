@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class YFNewsCell;
 @protocol YFNewsCellDelegate <NSObject>
-@optional
-- didClickDeleteButton:(UIButton *)deleteButton;
+- (void)newsCell:(YFNewsCell *)newsCell didClickDeleteButton:(UIButton *)deleteButton;
 @end
 
 
