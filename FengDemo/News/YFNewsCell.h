@@ -10,7 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class YFNewsCell;
+@class YFNewsCell, YFNewsModel;
+
 @protocol YFNewsCellDelegate <NSObject>
 - (void)newsCell:(YFNewsCell *)newsCell didClickDeleteButton:(UIButton *)deleteButton;
 @end
@@ -21,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<YFNewsCellDelegate> delegate;
 
 + (instancetype)newsCellWithTableView:(UITableView *)tableView;
+- (void)setData:(YFNewsModel *)newsModel;
 
 @end
 

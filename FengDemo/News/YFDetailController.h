@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YFDetailController : BaseViewController
 
+- (instancetype)initWithData:(NSString *)url;
+
 @end
 
 NS_ASSUME_NONNULL_END

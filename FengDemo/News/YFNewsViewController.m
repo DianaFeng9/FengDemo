@@ -10,12 +10,14 @@
 #import "YFNewsCell.h"
 #import "YFDetailController.h"
 #import "YFDeleteView.h"
+#import "YFLoader.h"
+#import "YFNewsModel.h"
 
 @interface YFNewsViewController ()<UITableViewDataSource, UITableViewDelegate, YFNewsCellDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
-@property(nonatomic, strong) NSMutableArray *dataArr;
-
+@property(nonatomic, strong) NSArray *dataArr;
+@property(nonatomic, strong) YFLoader *loader;
 @end
 
 @implementation YFNewsViewController
@@ -35,10 +37,16 @@
 }
 
 - (void)dataInit {
-    self.dataArr = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 20; i++) {
-        [self.dataArr addObject:@"hhhh"]; // 数据暂时无
-    }
+    self.loader = [[YFLoader alloc] init];
+    
+    __weak typeof(self) weakSelf = self;
+    [self.loader loadListDataWithBlock:^(BOOL success, NSArray<YFNewsModel *> * _Nonnull dataArray) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        if(success) {
+            strongSelf.dataArr = dataArray;
+            [strongSelf.tableView reloadData];
+        }
+    }];
 }
 
 #pragma mark - UITableViewDelegate
@@ -47,7 +55,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    YFDetailController *detailController = [[YFDetailController alloc] init];
+    YFDetailController *detailController = [[YFDetailController alloc] initWithData:((YFNewsModel *)self.dataArr[indexPath.row]).articleUrl];
     detailController.navigationItem.title = @"详情页";
     [self.navigationController pushViewController:detailController animated:YES];
 }
@@ -60,8 +68,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YFNewsCell *cell = [YFNewsCell newsCellWithTableView:tableView];
     cell.delegate = self;
-
-//    cell.textLabel.text = [NSString stringWithFormat:@"标题- %@", @(indexPath.row)];
+    [cell setData:self.dataArr[indexPath.row]];
     return cell;
 }
 
@@ -74,7 +81,7 @@
         NSLog(@"点击了删除弹框的del按钮");
         __strong typeof(weakSelf) strongSelf = weakSelf;
         NSIndexPath *indexPath = [strongSelf.tableView indexPathForCell:newsCell];
-        [strongSelf.dataArr removeLastObject];
+        //[strongSelf.dataArr removeLastObject];
         [strongSelf.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
 }

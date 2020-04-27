@@ -9,6 +9,7 @@
 #import "YFNewsCell.h"
 #import <Masonry.h>
 #import <SDWebImage.h>
+#import "YFNewsModel.h"
 
 @interface YFNewsCell()
 
@@ -36,8 +37,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        [self setUpSubviews];
-        [self setNewsCellData];        
+        [self setUpSubviews];     
     }
     return self;
 }
@@ -53,20 +53,19 @@
     // layout
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(20.0);
+        make.right.equalTo(self.imgView.mas_left).offset(-50.0);
         make.top.equalTo(self.contentView).offset(10.0);
-        make.height.mas_equalTo(20.0);
     }];
     
     [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView).offset(-10.0);
         make.centerY.equalTo(self.contentView);
-        make.size.mas_equalTo(CGSizeMake(40.0, 40.0));
+        make.size.mas_equalTo(CGSizeMake(50.0, 50.0));
     }];
     
     [self.sourceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(10.0);
+        make.left.equalTo(self.titleLabel);
         make.bottom.equalTo(self.contentView).offset(-5.0);
-        make.height.mas_equalTo(10.0);
     }];
     
     [self.commentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -90,7 +89,10 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        [_titleLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
+        _titleLabel.numberOfLines = 2;
+        _titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+        _titleLabel.font = [UIFont systemFontOfSize:15.0];
+        // [_titleLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
     }
     return _titleLabel;
 }
@@ -133,25 +135,24 @@
 - (UIImageView *)imgView {
     if (!_imgView) {
         _imgView = [[UIImageView alloc] init];
-        _imgView.contentMode = UIViewContentModeCenter;
+        _imgView.contentMode = UIViewContentModeScaleAspectFit;
+        _imgView.clipsToBounds = YES;
+        _imgView.backgroundColor = [UIColor blueColor];
     }
     return _imgView;
 }
 
 #pragma mark - 设置数据
-//- (void)setNewsCellData:(NewsData *) newsData {
-//
-//}
-
-- (void)setNewsCellData {
-    self.titleLabel.text = @"标题";
-    self.sourceLabel.text = @"数据源";
-    self.commentLabel.text = @"888评论";
-    self.timeLabel.text = @"3分钟前";
+- (void)setData:(YFNewsModel *)newsModel {
+    self.titleLabel.text = newsModel.title;
+    self.sourceLabel.text = newsModel.authorName;
+    self.commentLabel.text = newsModel.category;
+    self.timeLabel.text = newsModel.date;
     self.deleteButton.backgroundColor = [UIColor redColor];
     [self.deleteButton setTitle:@"X" forState:UIControlStateNormal];
     [self.deleteButton setTitle:@"X" forState:UIControlStateHighlighted];
-    self.imgView.backgroundColor = [UIColor yellowColor];
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:newsModel.picUrl]]];
+    self.imgView.image = image;
 }
 
 // #define YF_IS_DELEGATE_RSP_SEL(iDel, iSel) (iDel != nil && [iDel respondsToSelector:@selector(iSel)])
