@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YFNewsModel : NSObject
+@interface YFNewsModel : NSObject <NSSecureCoding>
 
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic, copy) NSString *picUrl;
