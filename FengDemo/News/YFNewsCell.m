@@ -144,6 +144,13 @@
 
 #pragma mark - 设置数据
 - (void)setData:(YFNewsModel *)newsModel {
+    BOOL hasRead = [[NSUserDefaults standardUserDefaults] boolForKey:newsModel.uniquekey];
+    if (hasRead) {
+        self.titleLabel.textColor = [UIColor lightGrayColor];
+    } else {
+        self.titleLabel.textColor = [UIColor blackColor];
+    }
+    
     self.titleLabel.text = newsModel.title;
     self.sourceLabel.text = newsModel.authorName;
     self.commentLabel.text = newsModel.category;
@@ -151,8 +158,11 @@
     self.deleteButton.backgroundColor = [UIColor redColor];
     [self.deleteButton setTitle:@"X" forState:UIControlStateNormal];
     [self.deleteButton setTitle:@"X" forState:UIControlStateHighlighted];
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:newsModel.picUrl]]];
-    self.imgView.image = image;
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:newsModel.picUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//        NSLog(@"设置完图片");
+    }];
+//    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:newsModel.picUrl]]];
+//    self.imgView.image = image;
 }
 
 // #define YF_IS_DELEGATE_RSP_SEL(iDel, iSel) (iDel != nil && [iDel respondsToSelector:@selector(iSel)])

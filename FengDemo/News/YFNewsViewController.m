@@ -58,6 +58,11 @@
     YFDetailController *detailController = [[YFDetailController alloc] initWithData:((YFNewsModel *)self.dataArr[indexPath.row]).articleUrl];
     detailController.navigationItem.title = @"详情页";
     [self.navigationController pushViewController:detailController animated:YES];
+    
+    YFNewsModel *item = self.dataArr[indexPath.row];
+    
+    // 标记已读状态
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniquekey];
 }
 
 #pragma mark UITableViewDataSource
